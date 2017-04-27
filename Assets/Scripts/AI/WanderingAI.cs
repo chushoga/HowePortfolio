@@ -6,10 +6,12 @@ public class WanderingAI : MonoBehaviour {
 
 	public float wanderRadius;
 	public float wanderTimer;
+	public float wanderSpeed = 1;
 
 	private Transform target;
 	private UnityEngine.AI.NavMeshAgent agent;
 	private float timer;
+
 
 	// Use this for initialization
 	void OnEnable () {
@@ -23,6 +25,7 @@ public class WanderingAI : MonoBehaviour {
 
 		if (timer >= wanderTimer) {
 			Vector3 newPos = RandomNavSphere(transform.position, wanderRadius, -1);
+			agent.speed = wanderSpeed;
 			agent.SetDestination(newPos);
 			timer = 0;
 		}
