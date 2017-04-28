@@ -26,6 +26,10 @@ public class WanderingAI : MonoBehaviour {
 		if (timer >= wanderTimer) {
 			Vector3 newPos = RandomNavSphere(transform.position, wanderRadius, -1);
 			agent.speed = wanderSpeed;
+
+			// HERE ROTATE GAMEOBJECT BEFORE SETTING DESTINATION
+			//transform.Rotate(Vector3.right * ( 5 * Time.deltaTime));
+
 			agent.SetDestination(newPos);
 			timer = 0;
 		}
