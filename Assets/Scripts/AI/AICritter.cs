@@ -4,19 +4,18 @@ using UnityEngine;
 
 public class AICritter : MonoBehaviour {
 
+	Vector3 startPos;
+	Vector3 targetPos;
+
 	[SerializeField] float wanderRange = 10f;
 	[SerializeField] float wanderSpeed = 2.5f;
 
 	public GameObject spawnPoint;
 
-	private Vector3 currentPos;
-	public Vector3 targetPos;
-
-	GameObject gm;
-
 	// Use this for initialization
 	void Start () {
-		
+		startPos = this.transform.position;
+		Debug.Log(startPos);
 	}
 	
 	// Update is called once per frame

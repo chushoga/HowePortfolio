@@ -139,7 +139,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 60059590}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c15ceac4f47454f459d8417911d5ee5a, type: 3}
   m_Name: 
@@ -161,7 +161,6 @@ MonoBehaviour:
   wanderRange: 5
   wanderSpeed: 2.5
   spawnPoint: {fileID: 0}
-  targetPos: {x: 2, y: 0, z: 0}
 --- !u!54 &60059594
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -734,7 +733,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1192175720}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c15ceac4f47454f459d8417911d5ee5a, type: 3}
   m_Name: 
@@ -756,7 +755,6 @@ MonoBehaviour:
   wanderRange: 5
   wanderSpeed: 5
   spawnPoint: {fileID: 0}
-  targetPos: {x: 2, y: 0, z: 0}
 --- !u!54 &1192175724
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -947,7 +945,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1350311648}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 12efaf715133dd6419a511bae59dfbb4, type: 3}
   m_Name: 
@@ -955,14 +953,13 @@ MonoBehaviour:
   wanderRange: 5
   wanderSpeed: 2.5
   spawnPoint: {fileID: 0}
-  targetPos: {x: 2, y: 0, z: 0}
 --- !u!114 &1350311655
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1350311648}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c15ceac4f47454f459d8417911d5ee5a, type: 3}
   m_Name: 
