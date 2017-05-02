@@ -2,19 +2,24 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+// requires a sphere collider for the collision detection.
+[RequireComponent(typeof(SphereCollider))]
 public class AICritter : MonoBehaviour {
 
-	Vector3 startPos;
-	Vector3 targetPos;
+	Vector3 startPos; // starting position
+	Vector3 targetPos; // target position
+
+	SphereCollider collisionBarrier;
 
 	[SerializeField] float wanderRange = 10f;
 	[SerializeField] float wanderSpeed = 2.5f;
 
-	public GameObject spawnPoint;
+
 
 	// Use this for initialization
 	void Start () {
-		startPos = this.transform.position;
+		collisionBarrier = GetComponent<SphereCollider>(); // grab the sphere collider
+		startPos = this.transform.position; 
 		Debug.Log(startPos);
 	}
 	
