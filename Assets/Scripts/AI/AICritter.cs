@@ -14,6 +14,8 @@ public class AICritter : MonoBehaviour {
 
 	[SerializeField] float wanderRange = 10f;
 	[SerializeField] float wanderSpeed = 2.5f;
+	[SerializeField] float rotSpeedCW = 1000.0f;
+	[SerializeField] float rotSpeedCCW = -5.0f;
 
 	Rigidbody rb;
 
@@ -35,5 +37,26 @@ public class AICritter : MonoBehaviour {
 	void Update () {
 		float step = wanderSpeed * Time.deltaTime;
 		//transform.position = Vector3.MoveTowards(transform.position, targetPos, step);
+
+		// TODO: have the gameobject move forward towards they way they are facing.
+		if(Input.GetKey(KeyCode.W)) {
+			transform.position += transform.forward * Time.deltaTime * wanderSpeed;
+		}
+		else if(Input.GetKey(KeyCode.S)) {
+			rb.position -= transform.forward * Time.deltaTime * wanderSpeed;
+		}
+		else if(Input.GetKey(KeyCode.A)) {
+			rb.position += transform.right * Time.deltaTime * wanderSpeed;
+		}
+		else if(Input.GetKey(KeyCode.D)) {
+			rb.position -= transform.right * Time.deltaTime * wanderSpeed;
+		}
+
+		if(Input.GetKey(KeyCode.E)) {
+			transform.Rotate(0, Time.deltaTime * rotSpeedCW, 0);
+		}
+		else if(Input.GetKey(KeyCode.Q)) {
+			transform.Rotate(0, Time.deltaTime * rotSpeedCCW, 0);
+		}
 	}
 }
