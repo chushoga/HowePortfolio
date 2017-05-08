@@ -101,7 +101,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1875924793293196}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.101700045, y: 8.894015e-17, z: -4.005508}
+  m_LocalPosition: {x: 0, y: 1.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4628903044792852}
@@ -251,7 +251,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wanderRange: 5
   wanderSpeed: 2.5
-  spawnPoint: {fileID: 0}
 --- !u!135 &135245369654765510
 SphereCollider:
   m_ObjectHideFlags: 1
@@ -271,7 +270,7 @@ SphereCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1875924793293196}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 2
