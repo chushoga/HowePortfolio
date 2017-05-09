@@ -14,8 +14,8 @@ public class AICritter : MonoBehaviour {
 
 	[SerializeField] float wanderRange = 10f;
 	[SerializeField] float wanderSpeed = 2.5f;
-	[SerializeField] float rotSpeedCW = 1000.0f;
-	[SerializeField] float rotSpeedCCW = -5.0f;
+	[SerializeField] float turnSpeed = 200f;
+
 
 	Rigidbody rb;
 
@@ -30,13 +30,15 @@ public class AICritter : MonoBehaviour {
 
 		collisionBarrier = GetComponent<SphereCollider>(); // grab the sphere collider
 		startPos = this.transform.position; 
-		Debug.Log(startPos);
+
+		// set target pos for TESTING
+		targetPos = RandomDirection();
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		float step = wanderSpeed * Time.deltaTime;
-		//transform.position = Vector3.MoveTowards(transform.position, targetPos, step);
+
+		transform.position = Vector3.MoveTowards(transform.position, targetPos, Time.deltaTime * wanderSpeed);
 
 		// TODO: have the gameobject move forward towards they way they are facing.
 		if(Input.GetKey(KeyCode.W)) {
@@ -45,18 +47,21 @@ public class AICritter : MonoBehaviour {
 		else if(Input.GetKey(KeyCode.S)) {
 			rb.position -= transform.forward * Time.deltaTime * wanderSpeed;
 		}
-		else if(Input.GetKey(KeyCode.A)) {
-			rb.position += transform.right * Time.deltaTime * wanderSpeed;
-		}
-		else if(Input.GetKey(KeyCode.D)) {
-			rb.position -= transform.right * Time.deltaTime * wanderSpeed;
-		}
 
-		if(Input.GetKey(KeyCode.E)) {
-			transform.Rotate(0, Time.deltaTime * rotSpeedCW, 0);
+		if(Input.GetKey(KeyCode.D)) {
+			transform.Rotate(0, Time.deltaTime * turnSpeed, 0);
 		}
-		else if(Input.GetKey(KeyCode.Q)) {
-			transform.Rotate(0, Time.deltaTime * rotSpeedCCW, 0);
+		else if(Input.GetKey(KeyCode.A)) {
+			transform.Rotate(0, Time.deltaTime * -turnSpeed, 0);
 		}
+	}
+
+	// pick a random direction and go
+	Vector3 RandomDirection(){
+		
+		Vector3 position = new Vector3(Random.Range(-wanderRange, wanderRange), 0, Random.Range(-wanderRange, wanderRange));
+
+		return position;
+
 	}
 }
