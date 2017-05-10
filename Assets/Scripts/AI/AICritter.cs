@@ -14,7 +14,7 @@ public class AICritter : MonoBehaviour {
 
 	[SerializeField] float wanderRange = 10f;
 	[SerializeField] float wanderSpeed = 2.5f;
-	[SerializeField] float turnSpeed = 200f;
+	[SerializeField] float turnSpeed = 50f;
 
 
 	Rigidbody rb;
@@ -33,12 +33,25 @@ public class AICritter : MonoBehaviour {
 
 		// set target pos for TESTING
 		targetPos = RandomDirection();
+		LookTowards(); // look at new direction
 	}
 	
 	// Update is called once per frame
 	void Update () {
 
+
+
 		transform.position = Vector3.MoveTowards(transform.position, targetPos, Time.deltaTime * wanderSpeed);
+
+
+		Vector3 forward = transform.TransformDirection(Vector3.forward) * 10;
+		Debug.DrawRay(transform.position, targetPos, Color.green);
+
+		if (Mathf.Round(transform.position.x) == Mathf.Round(targetPos.x) && Mathf.Round(transform.position.z) == Mathf.Round(targetPos.z)){
+			Debug.Log("reached pos");
+			targetPos = RandomDirection();
+			LookTowards(); // look at new direction
+		}
 
 		// TODO: have the gameobject move forward towards they way they are facing.
 		if(Input.GetKey(KeyCode.W)) {
@@ -62,6 +75,16 @@ public class AICritter : MonoBehaviour {
 		Vector3 position = new Vector3(Random.Range(-wanderRange, wanderRange), 0, Random.Range(-wanderRange, wanderRange));
 
 		return position;
+
+	}
+
+	void LookTowards (){
+		Vector3 targetDir = new Vector3(targetPos.x - transform.position.x, 0, targetPos.z - transform.position.z);
+		float step = turnSpeed * Time.deltaTime;
+		Vector3 newDir = Vector3.RotateTowards(transform.forward, targetDir, 20.0f*Time.deltaTime, 0.0F);
+		Debug.DrawRay(transform.position, newDir, Color.red);
+		transform.rotation = Quaternion.LookRotation(newDir);
+
 
 	}
 }

@@ -232,6 +232,16 @@ Prefab:
       propertyPath: rotSpeedCW
       value: 100
       objectReference: {fileID: 0}
+    - target: {fileID: 114320849762399010, guid: 65ea39c58973d8943bfb02cf40dfb7d3,
+        type: 2}
+      propertyPath: wanderSpeed
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114320849762399010, guid: 65ea39c58973d8943bfb02cf40dfb7d3,
+        type: 2}
+      propertyPath: wanderRange
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 65ea39c58973d8943bfb02cf40dfb7d3, type: 2}
   m_IsPrefabParent: 0
