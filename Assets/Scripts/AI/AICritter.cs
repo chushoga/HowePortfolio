@@ -85,6 +85,7 @@ public class AICritter : MonoBehaviour {
 		Debug.DrawRay(transform.position, newDir, Color.red);
 		transform.rotation = Quaternion.LookRotation(newDir);
 
-
+		Debug.Log(">>>>>>>>>>>>> currentRotation: "+transform.rotation);
+		Debug.Log(">>>>>>>>>>>>> newDir: "+targetDir);
 	}
 }
