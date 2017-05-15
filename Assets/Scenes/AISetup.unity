@@ -242,6 +242,11 @@ Prefab:
       propertyPath: wanderRange
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 114320849762399010, guid: 65ea39c58973d8943bfb02cf40dfb7d3,
+        type: 2}
+      propertyPath: spawnTo
+      value: 
+      objectReference: {fileID: 100000, guid: 0fa7fa3f4933daf4db355f89b89ac631, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 65ea39c58973d8943bfb02cf40dfb7d3, type: 2}
   m_IsPrefabParent: 0

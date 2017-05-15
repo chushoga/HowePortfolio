@@ -16,6 +16,8 @@ public class AICritter : MonoBehaviour {
 	[SerializeField] float wanderSpeed = 2.5f;
 	[SerializeField] float turnSpeed = 50f;
 
+	public GameObject spawnTo;
+
 
 	Rigidbody rb;
 
@@ -73,6 +75,8 @@ public class AICritter : MonoBehaviour {
 	Vector3 RandomDirection(){
 		
 		Vector3 position = new Vector3(Random.Range(-wanderRange, wanderRange), 0, Random.Range(-wanderRange, wanderRange));
+
+		Instantiate(spawnTo, position, Quaternion.identity);
 
 		return position;
 
