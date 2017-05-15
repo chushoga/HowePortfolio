@@ -41,8 +41,6 @@ public class AICritter : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-
-
 		transform.position = Vector3.MoveTowards(transform.position, targetPos, Time.deltaTime * wanderSpeed);
 
 
@@ -89,7 +87,22 @@ public class AICritter : MonoBehaviour {
 		Debug.DrawRay(transform.position, newDir, Color.red);
 		transform.rotation = Quaternion.LookRotation(newDir);
 
-		Debug.Log(">>>>>>>>>>>>> currentRotation: "+transform.rotation);
-		Debug.Log(">>>>>>>>>>>>> newDir: "+targetDir);
+		//Debug.Log(">>>>>>>>>>>>> currentRotation: "+transform.rotation);
+		//Debug.Log(">>>>>>>>>>>>> newDir: "+targetDir);
+	}
+
+	void OnCollisionEnter(Collision collision)
+	{
+		foreach (ContactPoint contact in collision.contacts)
+		{
+			Debug.DrawRay(contact.point, contact.normal, Color.white);
+		}
+		if (collision.relativeVelocity.magnitude > 2)
+			Debug.Log("COLLISTION LARGE");
+
+		if(collision.gameObject.tag != "ground"){
+			targetPos = RandomDirection();
+		}
+
 	}
 }
