@@ -6,8 +6,7 @@ using UnityEngine;
 [RequireComponent(typeof(SphereCollider))]
 [RequireComponent(typeof(Rigidbody))]
 public class AICritter : MonoBehaviour {
-
-	Vector3 startPos; // starting position
+	
 	Vector3 targetPos; // target position
 
 	SphereCollider collisionBarrier;
@@ -31,8 +30,8 @@ public class AICritter : MonoBehaviour {
 
 
 		collisionBarrier = GetComponent<SphereCollider>(); // grab the sphere collider
-		startPos = this.transform.position; 
 
+		targetPos = RandomDirection();
 
 		LookTowards(); // look at new direction
 	}
@@ -43,14 +42,13 @@ public class AICritter : MonoBehaviour {
 		transform.position = Vector3.MoveTowards(transform.position, targetPos, Time.deltaTime * wanderSpeed);
 
 
-		Vector3 forward = transform.TransformDirection(Vector3.forward) * 10;
-		Debug.DrawRay(transform.position, targetPos, Color.green);
 
 		if (Mathf.Round(transform.position.x) == Mathf.Round(targetPos.x) && Mathf.Round(transform.position.z) == Mathf.Round(targetPos.z)){
 			Debug.Log("reached pos");
 			targetPos = RandomDirection();
-			LookTowards(); // look at new direction
+
 		}
+		LookTowards(); // look at new direction
 
 		// TODO: have the gameobject move forward towards they way they are facing.
 		if(Input.GetKey(KeyCode.W)) {
@@ -82,20 +80,24 @@ public class AICritter : MonoBehaviour {
 	void LookTowards (){
 		Vector3 targetDir = new Vector3(targetPos.x - transform.position.x, 0, targetPos.z - transform.position.z);
 		float step = turnSpeed * Time.deltaTime;
-		Vector3 newDir = Vector3.RotateTowards(transform.forward, targetDir, 20.0f*Time.deltaTime, 0.0F);
-		Debug.DrawRay(transform.position, newDir, Color.red);
+		Vector3 newDir = Vector3.RotateTowards(transform.forward, targetDir, 5.0f * Time.deltaTime, 20.0F);
+		//Debug.DrawRay(transform.position, newDir, Color.red);
 		transform.rotation = Quaternion.LookRotation(newDir);
 
-		//Debug.Log(">>>>>>>>>>>>> currentRotation: "+transform.rotation);
-		//Debug.Log(">>>>>>>>>>>>> newDir: "+targetDir);
+		Debug.DrawRay(transform.position, newDir, Color.red);
+
+		Debug.Log(">>>>>>>>>>>>> currentRotation: "+transform.rotation);
+		Debug.Log(">>>>>>>>>>>>> newDir: "+targetDir);
 	}
 
 	void OnTriggerEnter(Collider collision)
 	{
 		
 		if(collision.gameObject.tag != "Ground"){
+			Debug.Log("reached pos");
 			targetPos = RandomDirection();
-			Debug.Log(collision.gameObject.tag);
+			LookTowards(); // look at new direction
+			//Debug.Log(collision.gameObject.tag);
 		}
 
 	}
