@@ -33,8 +33,7 @@ public class AICritter : MonoBehaviour {
 		collisionBarrier = GetComponent<SphereCollider>(); // grab the sphere collider
 		startPos = this.transform.position; 
 
-		// set target pos for TESTING
-		targetPos = RandomDirection();
+
 		LookTowards(); // look at new direction
 	}
 	
@@ -91,17 +90,12 @@ public class AICritter : MonoBehaviour {
 		//Debug.Log(">>>>>>>>>>>>> newDir: "+targetDir);
 	}
 
-	void OnCollisionEnter(Collision collision)
+	void OnTriggerEnter(Collider collision)
 	{
-		foreach (ContactPoint contact in collision.contacts)
-		{
-			Debug.DrawRay(contact.point, contact.normal, Color.white);
-		}
-		if (collision.relativeVelocity.magnitude > 2)
-			Debug.Log("COLLISTION LARGE");
-
-		if(collision.gameObject.tag != "ground"){
+		
+		if(collision.gameObject.tag != "Ground"){
 			targetPos = RandomDirection();
+			Debug.Log(collision.gameObject.tag);
 		}
 
 	}

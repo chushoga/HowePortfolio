@@ -235,18 +235,18 @@ Prefab:
     - target: {fileID: 114320849762399010, guid: 65ea39c58973d8943bfb02cf40dfb7d3,
         type: 2}
       propertyPath: wanderSpeed
-      value: 0.5
+      value: 4.5
       objectReference: {fileID: 0}
     - target: {fileID: 114320849762399010, guid: 65ea39c58973d8943bfb02cf40dfb7d3,
         type: 2}
       propertyPath: wanderRange
-      value: 5
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 114320849762399010, guid: 65ea39c58973d8943bfb02cf40dfb7d3,
         type: 2}
       propertyPath: spawnTo
       value: 
-      objectReference: {fileID: 1956562954410244, guid: 854de919e656e7a438e5d03b21ed1de6,
+      objectReference: {fileID: 1180552556480220, guid: b17f72854101f964bb1239ebbc719deb,
         type: 2}
     - target: {fileID: 135325368793724328, guid: 65ea39c58973d8943bfb02cf40dfb7d3,
         type: 2}
@@ -337,7 +337,7 @@ GameObject:
   - component: {fileID: 1602429522}
   m_Layer: 0
   m_Name: Plane
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 8
