@@ -6,19 +6,25 @@ using UnityEngine;
 [RequireComponent(typeof(SphereCollider))]
 [RequireComponent(typeof(Rigidbody))]
 public class AICritter : MonoBehaviour {
-	
-	Vector3 targetPos; // target position
 
-	SphereCollider collisionBarrier;
+	// test object to spawn and see the location of newDir
+	public GameObject spawnTo;
 
 	[SerializeField] float wanderRange = 10f;
 	[SerializeField] float wanderSpeed = 2.5f;
 	[SerializeField] float turnSpeed = 50f;
 
-	public GameObject spawnTo;
+	// collision bounds(make larger than the character)
+	// this is a required component
+	SphereCollider collisionBarrier; 
 
-
+	// required component.
 	Rigidbody rb;
+
+	// target position
+	Vector3 targetPos;
+
+	bool isMoving = true;
 
 	// Use this for initialization
 	void Start () {
@@ -39,8 +45,15 @@ public class AICritter : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-		transform.position = Vector3.MoveTowards(transform.position, targetPos, Time.deltaTime * wanderSpeed);
+		// do a random check if should choose new direction or stand still for a random abount of time before moving.
+		if (isMoving == true) {
+			
+			// update movement
+			transform.position = Vector3.MoveTowards(transform.position, targetPos, Time.deltaTime * wanderSpeed);
 
+		} else {
+			// stand still
+		}
 
 
 		if (Mathf.Round(transform.position.x) == Mathf.Round(targetPos.x) && Mathf.Round(transform.position.z) == Mathf.Round(targetPos.z)){
@@ -71,7 +84,8 @@ public class AICritter : MonoBehaviour {
 		
 		Vector3 position = new Vector3(Random.Range(-wanderRange, wanderRange), 0, Random.Range(-wanderRange, wanderRange));
 
-		Instantiate(spawnTo, position, Quaternion.identity);
+		//Instantiate(spawnTo, position, Quaternion.identity);
+		ChooseMoveType(); // choose a movement type. Standing or moving.
 
 		return position;
 
@@ -86,10 +100,10 @@ public class AICritter : MonoBehaviour {
 
 		Debug.DrawRay(transform.position, newDir, Color.red);
 
-		Debug.Log(">>>>>>>>>>>>> currentRotation: "+transform.rotation);
-		Debug.Log(">>>>>>>>>>>>> newDir: "+targetDir);
 	}
 
+	// If Object collides with the proximity trigger then 
+	// choose a new direction and face it.
 	void OnTriggerEnter(Collider collision)
 	{
 		
@@ -100,5 +114,47 @@ public class AICritter : MonoBehaviour {
 			//Debug.Log(collision.gameObject.tag);
 		}
 
+	}
+
+	// If object touches directly with body collier then
+	// choose a new direction and face it.
+	void OnCollisionEnter(Collision collision)
+	{
+
+		if(collision.gameObject.tag != "Ground"){
+			Debug.Log("reached pos");
+			targetPos = RandomDirection();
+			LookTowards(); // look at new direction
+
+		}
+
+	}
+
+	// choose if moving or stopped.
+	// 0 = stopped
+	// 1 = moving
+	void ChooseMoveType(){
+		float rnd = Random.Range(0.0f,100.0f);
+
+		if(rnd >= 50){
+			isMoving = true;
+		} else {
+			isMoving = false;
+			StartCoroutine(MovementPause());
+		}
+
+		Debug.Log("move type:" + rnd);
+	}
+
+	IEnumerator MovementPause(){
+		float time = Random.Range(0.0f,10.0f);
+
+		yield return new WaitForSeconds(time);
+
+		// chose new random directio to face
+		targetPos = RandomDirection();
+
+		// start moving
+		isMoving = true;
 	}
 }
