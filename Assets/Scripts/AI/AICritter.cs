@@ -24,6 +24,7 @@ public class AICritter : MonoBehaviour {
 	// target position
 	Vector3 targetPos;
 
+
 	bool isMoving = true;
 
 	// Use this for initialization
@@ -57,7 +58,7 @@ public class AICritter : MonoBehaviour {
 
 
 		if (Mathf.Round(transform.position.x) == Mathf.Round(targetPos.x) && Mathf.Round(transform.position.z) == Mathf.Round(targetPos.z)){
-			Debug.Log("reached pos");
+			//Debug.Log("reached pos");
 			targetPos = RandomDirection();
 
 		}
@@ -108,7 +109,7 @@ public class AICritter : MonoBehaviour {
 	{
 		
 		if(collision.gameObject.tag != "Ground"){
-			Debug.Log("reached pos");
+			//Debug.Log("reached pos");
 			targetPos = RandomDirection();
 			LookTowards(); // look at new direction
 			//Debug.Log(collision.gameObject.tag);
@@ -122,7 +123,8 @@ public class AICritter : MonoBehaviour {
 	{
 
 		if(collision.gameObject.tag != "Ground"){
-			Debug.Log("reached pos");
+			//Debug.Log("reached pos");
+
 			targetPos = RandomDirection();
 			LookTowards(); // look at new direction
 
@@ -143,7 +145,7 @@ public class AICritter : MonoBehaviour {
 			StartCoroutine(MovementPause());
 		}
 
-		Debug.Log("move type:" + rnd);
+		//Debug.Log("move type:" + rnd);
 	}
 
 	IEnumerator MovementPause(){
