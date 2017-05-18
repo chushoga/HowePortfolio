@@ -88,6 +88,20 @@ public class AICritter : MonoBehaviour {
 		//Instantiate(spawnTo, position, Quaternion.identity);
 		ChooseMoveType(); // choose a movement type. Standing or moving.
 
+		// TODO: check if new position is occupied.
+
+		Collider[] hitColliders = Physics.OverlapSphere(position, 1f);
+
+		int i = 0;
+		while (i < hitColliders.Length)
+		{
+			if(hitColliders[i].tag != "Ground" ){
+				// recheck position and put a new position.
+				position = new Vector3(Random.Range(-wanderRange, wanderRange), 0, Random.Range(-wanderRange, wanderRange));
+			} 
+			i++;
+		}
+
 		return position;
 
 	}
