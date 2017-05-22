@@ -28,7 +28,6 @@ public class AICritter : MonoBehaviour {
 	bool isMoving = true;
 
 	// collision barrior cooldown.
-	bool isCollisionCooldown = false;
 	float collisionCooldownTimer = 2.0f;
 
 	// Use this for initialization
@@ -128,16 +127,14 @@ public class AICritter : MonoBehaviour {
 		
 		if(collision.gameObject.tag != "Ground"){
 
-			/* TODO START FROM HERE.----------------------------------------------------------- */
-			if (isCollisionCooldown){
-			// set the cooldown timer for the trigger
-			CollisionCooldown();
-
-			} else {
+			if(isMoving == true){
+					
 				//Debug.Log("reached pos");
 				targetPos = RandomDirection();
 				LookTowards(); // look at new direction
 				//Debug.Log(collision.gameObject.tag);
+				StartCoroutine(CollisionCooldown());
+
 			}
 
 			/*END WORK HERE -----------------------------------------------------------*/
@@ -177,7 +174,10 @@ public class AICritter : MonoBehaviour {
 	}
 
 	IEnumerator MovementPause(){
-		float time = Random.Range(0.0f,10.0f);
+
+		isMoving = false;
+
+		float time = Random.Range(10.0f,20.0f);
 
 		yield return new WaitForSeconds(time);
 
@@ -189,9 +189,12 @@ public class AICritter : MonoBehaviour {
 	}
 
 	IEnumerator CollisionCooldown(){
+
+		collisionBarrier.enabled = false;
+
 		yield return new WaitForSeconds(collisionCooldownTimer);
 
-		isCollisionCooldown = true;
+		collisionBarrier.enabled = true;
 
 	}
 }
