@@ -110,12 +110,19 @@ public class AICritter : MonoBehaviour {
 	}
 
 	void LookTowards (){
+		
 		Vector3 targetDir = new Vector3(targetPos.x - transform.position.x, 0, targetPos.z - transform.position.z);
 		float step = turnSpeed * Time.deltaTime;
-		Vector3 newDir = Vector3.RotateTowards(transform.forward, targetDir, 5.0f * Time.deltaTime, 20.0F);
+		Vector3 newDir = Vector3.RotateTowards(transform.forward, targetDir, turnSpeed * Time.deltaTime, 20.0F);
 		//Debug.DrawRay(transform.position, newDir, Color.red);
 		transform.rotation = Quaternion.LookRotation(newDir);
 
+		Vector3 relativePos = newDir - transform.position;
+		Vector3 currentPos = transform.position;
+
+		// https://forum.unity3d.com/threads/how-to-know-when-quaternion-rotatetowards-has-completed-its-rotation.467050/
+		// TODO: START HERE run this once in the editor to see if this compiles correctly.
+		Debug.DrawRay(currentPos, relativePos, Color.green); 
 		Debug.DrawRay(transform.position, newDir, Color.red);
 
 	}
@@ -128,12 +135,14 @@ public class AICritter : MonoBehaviour {
 		if(collision.gameObject.tag != "Ground"){
 
 			if(isMoving == true){
+
+				StartCoroutine(CollisionCooldown());
 					
 				//Debug.Log("reached pos");
 				targetPos = RandomDirection();
 				LookTowards(); // look at new direction
 				//Debug.Log(collision.gameObject.tag);
-				StartCoroutine(CollisionCooldown());
+
 
 			}
 
