@@ -115,14 +115,19 @@ public class AICritter : MonoBehaviour {
 		float step = turnSpeed * Time.deltaTime;
 		Vector3 newDir = Vector3.RotateTowards(transform.forward, targetDir, turnSpeed * Time.deltaTime, 20.0F);
 		//Debug.DrawRay(transform.position, newDir, Color.red);
-		transform.rotation = Quaternion.LookRotation(newDir);
 
-		Vector3 relativePos = newDir - transform.position;
-		Vector3 currentPos = transform.position;
+		/**/
+		// test quaterinan 
+		Vector3 relativePos = targetDir - transform.position;
+		Quaternion rotation = Quaternion.LookRotation(relativePos);
+		Debug.Log(rotation);
+		/**/
+
+		transform.rotation = Quaternion.LookRotation(newDir);
 
 		// https://forum.unity3d.com/threads/how-to-know-when-quaternion-rotatetowards-has-completed-its-rotation.467050/
 		// TODO: START HERE run this once in the editor to see if this compiles correctly.
-		Debug.DrawRay(currentPos, relativePos, Color.green); 
+		//Debug.DrawRay(currentPos, newDir, Color.green); 
 		Debug.DrawRay(transform.position, newDir, Color.red);
 
 	}
