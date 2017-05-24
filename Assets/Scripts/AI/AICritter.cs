@@ -27,6 +27,9 @@ public class AICritter : MonoBehaviour {
 	// is moving check
 	bool isMoving = true;
 
+	// is rotating?
+	bool isRotating = false;
+
 	// collision barrior cooldown.
 	float collisionCooldownTimer = 2.0f;
 
@@ -50,7 +53,7 @@ public class AICritter : MonoBehaviour {
 	void Update () {
 
 		// do a random check if should choose new direction or stand still for a random abount of time before moving.
-		if (isMoving == true) {
+		if (isMoving == true && isRotating == false) {
 			
 			// update movement
 			transform.position = Vector3.MoveTowards(transform.position, targetPos, Time.deltaTime * wanderSpeed);
@@ -110,17 +113,22 @@ public class AICritter : MonoBehaviour {
 	}
 
 	void LookTowards (){
+
+		isRotating = true;
 		
 		Vector3 targetDir = new Vector3(targetPos.x - transform.position.x, 0, targetPos.z - transform.position.z);
 		float step = turnSpeed * Time.deltaTime;
-		Vector3 newDir = Vector3.RotateTowards(transform.forward, targetDir, turnSpeed * Time.deltaTime, 20.0F);
+		Vector3 newDir = Vector3.RotateTowards(transform.forward, targetDir, step, 20.0F);
 		//Debug.DrawRay(transform.position, newDir, Color.red);
 
 		/**/
 		// test quaterinan 
-		Vector3 relativePos = targetDir - transform.position;
-		Quaternion rotation = Quaternion.LookRotation(relativePos);
-		Debug.Log(rotation);
+		Quaternion rotation = Quaternion.LookRotation(targetDir);
+
+		// check the target direction and see if it equels the current rotation.
+		if (transform.rotation == rotation) {
+			isRotating = false;
+		}
 		/**/
 
 		transform.rotation = Quaternion.LookRotation(newDir);
