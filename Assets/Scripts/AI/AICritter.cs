@@ -91,10 +91,9 @@ public class AICritter : MonoBehaviour {
 		
 		Vector3 position = new Vector3(Random.Range(-wanderRange, wanderRange), 0, Random.Range(-wanderRange, wanderRange));
 
+		// uncomment this if you want to add something to spawn in like a particle effect at the target position.
 		//Instantiate(spawnTo, position, Quaternion.identity);
 		ChooseMoveType(); // choose a movement type. Standing or moving.
-
-		// TODO: check if new position is occupied.
 
 		Collider[] hitColliders = Physics.OverlapSphere(position, 1f);
 
@@ -119,24 +118,18 @@ public class AICritter : MonoBehaviour {
 		Vector3 targetDir = new Vector3(targetPos.x - transform.position.x, 0, targetPos.z - transform.position.z);
 		float step = turnSpeed * Time.deltaTime;
 		Vector3 newDir = Vector3.RotateTowards(transform.forward, targetDir, step, 20.0F);
-		//Debug.DrawRay(transform.position, newDir, Color.red);
 
-		/**/
-		// test quaterinan 
+		//checking if still rotating.
 		Quaternion rotation = Quaternion.LookRotation(targetDir);
 
 		// check the target direction and see if it equels the current rotation.
 		if (transform.rotation == rotation) {
 			isRotating = false;
 		}
-		/**/
 
 		transform.rotation = Quaternion.LookRotation(newDir);
 
-		// https://forum.unity3d.com/threads/how-to-know-when-quaternion-rotatetowards-has-completed-its-rotation.467050/
-		// TODO: START HERE run this once in the editor to see if this compiles correctly.
-		//Debug.DrawRay(currentPos, newDir, Color.green); 
-		Debug.DrawRay(transform.position, newDir, Color.red);
+		//Debug.DrawRay(transform.position, newDir, Color.red);
 
 	}
 

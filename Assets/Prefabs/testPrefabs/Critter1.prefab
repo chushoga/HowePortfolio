@@ -101,7 +101,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1875924793293196}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.5, z: 0}
+  m_LocalPosition: {x: -1.1, y: 2.56, z: 1.63}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4628903044792852}
@@ -139,6 +139,7 @@ MeshRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
+  m_SortingLayer: 0
   m_SortingOrder: 0
 --- !u!23 &23760515380897944
 MeshRenderer:
@@ -170,6 +171,7 @@ MeshRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
+  m_SortingLayer: 0
   m_SortingOrder: 0
 --- !u!23 &23935827822433988
 MeshRenderer:
@@ -201,6 +203,7 @@ MeshRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
+  m_SortingLayer: 0
   m_SortingOrder: 0
 --- !u!33 &33284282214459200
 MeshFilter:
@@ -249,8 +252,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12efaf715133dd6419a511bae59dfbb4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wanderRange: 5
-  wanderSpeed: 2.5
+  spawnTo: {fileID: 1180552556480220, guid: b17f72854101f964bb1239ebbc719deb, type: 2}
+  wanderRange: 20
+  wanderSpeed: 2
+  turnSpeed: 2
 --- !u!135 &135245369654765510
 SphereCollider:
   m_ObjectHideFlags: 1
@@ -273,7 +278,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 2
+  m_Radius: 1
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!135 &135701581643972696
 SphereCollider:
