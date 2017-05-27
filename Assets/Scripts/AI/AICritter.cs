@@ -33,6 +33,8 @@ public class AICritter : MonoBehaviour {
 	// collision barrior cooldown.
 	float collisionCooldownTimer = 2.0f;
 
+	Animator ani;
+
 	// Use this for initialization
 	void Start () {
 		// get Rigidbody
@@ -51,6 +53,14 @@ public class AICritter : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+
+		// TODO RESTART HERE >>>>
+		// check animation stat here. if moving then do the moving animation. else do something else
+		if(rb.velocity == Vector3.zero){
+			
+		}
+		// TODO RESTART HERE >>>>>
+
 
 		// do a random check if should choose new direction or stand still for a random abount of time before moving.
 		if (isMoving == true && isRotating == false) {
