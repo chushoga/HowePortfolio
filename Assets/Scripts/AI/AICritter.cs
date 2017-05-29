@@ -37,6 +37,9 @@ public class AICritter : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+
+		ani = GetComponent<Animator>();
+
 		// get Rigidbody
 		rb = GetComponent<Rigidbody>();
 
@@ -60,7 +63,11 @@ public class AICritter : MonoBehaviour {
 			
 		}
 		// TODO RESTART HERE >>>>>
-
+		if (isMoving == true || isRotating == true){
+			ani.SetBool("isMoving", true);
+		} else {
+			ani.SetBool("isMoving", false);
+		}
 
 		// do a random check if should choose new direction or stand still for a random abount of time before moving.
 		if (isMoving == true && isRotating == false) {
