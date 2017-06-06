@@ -46,8 +46,11 @@ public class AICritter : MonoBehaviour {
 		//lock rotaiton
 		rb.constraints = RigidbodyConstraints.FreezeRotation;
 
+		// grab the sphere collider
+		collisionBarrier = GetComponent<SphereCollider>(); 
 
-		collisionBarrier = GetComponent<SphereCollider>(); // grab the sphere collider
+		// initialize the collision barrier as isTrigger(incase forget to set it)
+		collisionBarrier.isTrigger = true;
 
 		targetPos = RandomDirection();
 
@@ -179,6 +182,8 @@ public class AICritter : MonoBehaviour {
 	void OnCollisionEnter(Collision collision)
 	{
 
+
+
 		if(collision.gameObject.tag != "Ground"){
 			//Debug.Log("reached pos");
 
@@ -221,6 +226,7 @@ public class AICritter : MonoBehaviour {
 	}
 
 	IEnumerator CollisionCooldown(){
+		
 
 		collisionBarrier.enabled = false;
 
