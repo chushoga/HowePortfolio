@@ -17,7 +17,7 @@ public class FlockingAi : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		ComputeAlignment();
-		gm.transform.Translate(Vector3.forward * Time.deltaTime);
+		//gm.transform.Translate(Vector3.forward * Time.deltaTime);
 	}
 
 	public void ComputeAlignment(){
