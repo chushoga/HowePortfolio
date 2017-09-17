@@ -7,11 +7,11 @@ public class FlockingAi : MonoBehaviour {
 	[SerializeField]
 	private float findNeighborRadius = 2f;
 
-	private GameObject gm;
+//	private GameObject gm;
 
 	// Use this for initialization
 	void Start () {
-		gm = this.gameObject;
+//		gm = this.gameObject;
 	}
 	
 	// Update is called once per frame
@@ -22,7 +22,7 @@ public class FlockingAi : MonoBehaviour {
 
 	public void ComputeAlignment(){
 
-		Vector3 v = new Vector3();
+//		Vector3 v = new Vector3();
 		int neighhborCount = 0;
 
 		gameObject.GetComponent<Renderer>().material.color = Color.white;
