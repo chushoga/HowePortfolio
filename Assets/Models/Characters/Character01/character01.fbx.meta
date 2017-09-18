@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: d444d3221de4d7548a9c255b0ad66203
-timeCreated: 1495842647
+guid: e716f8f31864c3a4fb7c79e4b36ad616
+timeCreated: 1505747202
 licenseType: Free
 ModelImporter:
   serializedVersion: 21
@@ -178,7 +178,7 @@ ModelImporter:
       name: Rig|IdlePose
       takeName: Rig|IdlePose
       firstFrame: 0
-      lastFrame: 25
+      lastFrame: 24
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -186,7 +186,7 @@ ModelImporter:
       loop: 0
       hasAdditiveReferencePose: 0
       loopTime: 1
-      loopBlend: 0
+      loopBlend: 1
       loopBlendOrientation: 0
       loopBlendPositionY: 0
       loopBlendPositionXZ: 0
@@ -198,147 +198,7 @@ ModelImporter:
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
       events: []
-      transformMask:
-      - path: 
-        weight: 1
-      - path: Rig
-        weight: 1
-      - path: Rig/Master
-        weight: 1
-      - path: Rig/Master/LegControl.L
-        weight: 1
-      - path: Rig/Master/LegControl.L/foot.L
-        weight: 1
-      - path: Rig/Master/LegControl.L/foot.L/toe.L
-        weight: 1
-      - path: Rig/Master/LegControl.L/foot.L/toe.L/toe.L_end
-        weight: 1
-      - path: Rig/Master/LegControl.L/footRoll.L
-        weight: 1
-      - path: Rig/Master/LegControl.L/footRoll.L/LegIk.L
-        weight: 1
-      - path: Rig/Master/LegControl.L/footRoll.L/LegIk.L/LegIk.L_end
-        weight: 1
-      - path: Rig/Master/LegControl.L/toesControl.L
-        weight: 1
-      - path: Rig/Master/LegControl.L/toesControl.L/toesControl.L_end
-        weight: 1
-      - path: Rig/Master/LegControl.R
-        weight: 1
-      - path: Rig/Master/LegControl.R/foot.R
-        weight: 1
-      - path: Rig/Master/LegControl.R/foot.R/toe.R
-        weight: 1
-      - path: Rig/Master/LegControl.R/foot.R/toe.R/toe.R_end
-        weight: 1
-      - path: Rig/Master/LegControl.R/footRoll.R
-        weight: 1
-      - path: Rig/Master/LegControl.R/footRoll.R/LegIk.R
-        weight: 1
-      - path: Rig/Master/LegControl.R/footRoll.R/LegIk.R/LegIk.R_end
-        weight: 1
-      - path: Rig/Master/LegControl.R/toesControl.R
-        weight: 1
-      - path: Rig/Master/LegControl.R/toesControl.R/toesControl.R_end
-        weight: 1
-      - path: Rig/Master/legPoleTarget.L
-        weight: 1
-      - path: Rig/Master/legPoleTarget.L/legPoleTarget.L_end
-        weight: 1
-      - path: Rig/Master/legPoleTarget.R
-        weight: 1
-      - path: Rig/Master/legPoleTarget.R/legPoleTarget.R_end
-        weight: 1
-      - path: Rig/Master/ROOT
-        weight: 1
-      - path: Rig/Master/ROOT/spine
-        weight: 1
-      - path: Rig/Master/ROOT/spine/chest
-        weight: 1
-      - path: Rig/Master/ROOT/spine/chest/neck
-        weight: 1
-      - path: Rig/Master/ROOT/spine/chest/neck/head
-        weight: 1
-      - path: Rig/Master/ROOT/spine/chest/neck/head/bowMain
-        weight: 1
-      - path: Rig/Master/ROOT/spine/chest/neck/head/bowMain/bow1.L
-        weight: 1
-      - path: Rig/Master/ROOT/spine/chest/neck/head/bowMain/bow1.L/bow1.L_end
-        weight: 1
-      - path: Rig/Master/ROOT/spine/chest/neck/head/bowMain/bow1.R
-        weight: 1
-      - path: Rig/Master/ROOT/spine/chest/neck/head/bowMain/bow1.R/bow1.R_end
-        weight: 1
-      - path: Rig/Master/ROOT/spine/chest/neck/head/bowMain/bow2.L
-        weight: 1
-      - path: Rig/Master/ROOT/spine/chest/neck/head/bowMain/bow2.L/bow2.L_end
-        weight: 1
-      - path: Rig/Master/ROOT/spine/chest/neck/head/bowMain/bow2.R
-        weight: 1
-      - path: Rig/Master/ROOT/spine/chest/neck/head/bowMain/bow2.R/bow2.R_end
-        weight: 1
-      - path: Rig/Master/ROOT/spine/chest/neck/head/bowMain/bow3.L
-        weight: 1
-      - path: Rig/Master/ROOT/spine/chest/neck/head/bowMain/bow3.L/bow4.L
-        weight: 1
-      - path: Rig/Master/ROOT/spine/chest/neck/head/bowMain/bow3.L/bow4.L/bow4.L_end
-        weight: 1
-      - path: Rig/Master/ROOT/spine/chest/neck/head/bowMain/bow3.R
-        weight: 1
-      - path: Rig/Master/ROOT/spine/chest/neck/head/bowMain/bow3.R/bow4.R
-        weight: 1
-      - path: Rig/Master/ROOT/spine/chest/neck/head/bowMain/bow3.R/bow4.R/bow4.R_end
-        weight: 1
-      - path: Rig/Master/ROOT/spine/chest/shoulder.L
-        weight: 1
-      - path: Rig/Master/ROOT/spine/chest/shoulder.L/Arm1.L
-        weight: 1
-      - path: Rig/Master/ROOT/spine/chest/shoulder.L/Arm1.L/Arm2.L
-        weight: 1
-      - path: Rig/Master/ROOT/spine/chest/shoulder.L/Arm1.L/Arm2.L/Arm3.L
-        weight: 1
-      - path: Rig/Master/ROOT/spine/chest/shoulder.L/Arm1.L/Arm2.L/Arm3.L/Arm3.L_end
-        weight: 1
-      - path: Rig/Master/ROOT/spine/chest/shoulder.R
-        weight: 1
-      - path: Rig/Master/ROOT/spine/chest/shoulder.R/Arm1.R
-        weight: 1
-      - path: Rig/Master/ROOT/spine/chest/shoulder.R/Arm1.R/Arm2.R
-        weight: 1
-      - path: Rig/Master/ROOT/spine/chest/shoulder.R/Arm1.R/Arm2.R/Arm3.R
-        weight: 1
-      - path: Rig/Master/ROOT/spine/chest/shoulder.R/Arm1.R/Arm2.R/Arm3.R/Arm3.R_end
-        weight: 1
-      - path: Rig/Master/ROOT/tail01
-        weight: 1
-      - path: Rig/Master/ROOT/tail01/tail02
-        weight: 1
-      - path: Rig/Master/ROOT/tail01/tail02/tail03
-        weight: 1
-      - path: Rig/Master/ROOT/tail01/tail02/tail03/tail04
-        weight: 1
-      - path: Rig/Master/ROOT/tail01/tail02/tail03/tail04/tail05
-        weight: 1
-      - path: Rig/Master/ROOT/tail01/tail02/tail03/tail04/tail05/tail06
-        weight: 1
-      - path: Rig/Master/ROOT/tail01/tail02/tail03/tail04/tail05/tail06/tail07
-        weight: 1
-      - path: Rig/Master/ROOT/tail01/tail02/tail03/tail04/tail05/tail06/tail07/tail07_end
-        weight: 1
-      - path: Rig/Master/ROOT/thigh.L
-        weight: 1
-      - path: Rig/Master/ROOT/thigh.L/shin.L
-        weight: 1
-      - path: Rig/Master/ROOT/thigh.L/shin.L/shin.L_end
-        weight: 1
-      - path: Rig/Master/ROOT/thigh.R
-        weight: 1
-      - path: Rig/Master/ROOT/thigh.R/shin.R
-        weight: 1
-      - path: Rig/Master/ROOT/thigh.R/shin.R/shin.R_end
-        weight: 1
-      - path: Sprinkle
-        weight: 1
+      transformMask: []
       maskType: 3
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
@@ -346,7 +206,7 @@ ModelImporter:
       name: Rig|Walk
       takeName: Rig|Walk
       firstFrame: 0
-      lastFrame: 25
+      lastFrame: 24
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -354,7 +214,7 @@ ModelImporter:
       loop: 0
       hasAdditiveReferencePose: 0
       loopTime: 1
-      loopBlend: 0
+      loopBlend: 1
       loopBlendOrientation: 0
       loopBlendPositionY: 0
       loopBlendPositionXZ: 0
@@ -366,147 +226,7 @@ ModelImporter:
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
       events: []
-      transformMask:
-      - path: 
-        weight: 1
-      - path: Rig
-        weight: 1
-      - path: Rig/Master
-        weight: 1
-      - path: Rig/Master/LegControl.L
-        weight: 1
-      - path: Rig/Master/LegControl.L/foot.L
-        weight: 1
-      - path: Rig/Master/LegControl.L/foot.L/toe.L
-        weight: 1
-      - path: Rig/Master/LegControl.L/foot.L/toe.L/toe.L_end
-        weight: 1
-      - path: Rig/Master/LegControl.L/footRoll.L
-        weight: 1
-      - path: Rig/Master/LegControl.L/footRoll.L/LegIk.L
-        weight: 1
-      - path: Rig/Master/LegControl.L/footRoll.L/LegIk.L/LegIk.L_end
-        weight: 1
-      - path: Rig/Master/LegControl.L/toesControl.L
-        weight: 1
-      - path: Rig/Master/LegControl.L/toesControl.L/toesControl.L_end
-        weight: 1
-      - path: Rig/Master/LegControl.R
-        weight: 1
-      - path: Rig/Master/LegControl.R/foot.R
-        weight: 1
-      - path: Rig/Master/LegControl.R/foot.R/toe.R
-        weight: 1
-      - path: Rig/Master/LegControl.R/foot.R/toe.R/toe.R_end
-        weight: 1
-      - path: Rig/Master/LegControl.R/footRoll.R
-        weight: 1
-      - path: Rig/Master/LegControl.R/footRoll.R/LegIk.R
-        weight: 1
-      - path: Rig/Master/LegControl.R/footRoll.R/LegIk.R/LegIk.R_end
-        weight: 1
-      - path: Rig/Master/LegControl.R/toesControl.R
-        weight: 1
-      - path: Rig/Master/LegControl.R/toesControl.R/toesControl.R_end
-        weight: 1
-      - path: Rig/Master/legPoleTarget.L
-        weight: 1
-      - path: Rig/Master/legPoleTarget.L/legPoleTarget.L_end
-        weight: 1
-      - path: Rig/Master/legPoleTarget.R
-        weight: 1
-      - path: Rig/Master/legPoleTarget.R/legPoleTarget.R_end
-        weight: 1
-      - path: Rig/Master/ROOT
-        weight: 1
-      - path: Rig/Master/ROOT/spine
-        weight: 1
-      - path: Rig/Master/ROOT/spine/chest
-        weight: 1
-      - path: Rig/Master/ROOT/spine/chest/neck
-        weight: 1
-      - path: Rig/Master/ROOT/spine/chest/neck/head
-        weight: 1
-      - path: Rig/Master/ROOT/spine/chest/neck/head/bowMain
-        weight: 1
-      - path: Rig/Master/ROOT/spine/chest/neck/head/bowMain/bow1.L
-        weight: 1
-      - path: Rig/Master/ROOT/spine/chest/neck/head/bowMain/bow1.L/bow1.L_end
-        weight: 1
-      - path: Rig/Master/ROOT/spine/chest/neck/head/bowMain/bow1.R
-        weight: 1
-      - path: Rig/Master/ROOT/spine/chest/neck/head/bowMain/bow1.R/bow1.R_end
-        weight: 1
-      - path: Rig/Master/ROOT/spine/chest/neck/head/bowMain/bow2.L
-        weight: 1
-      - path: Rig/Master/ROOT/spine/chest/neck/head/bowMain/bow2.L/bow2.L_end
-        weight: 1
-      - path: Rig/Master/ROOT/spine/chest/neck/head/bowMain/bow2.R
-        weight: 1
-      - path: Rig/Master/ROOT/spine/chest/neck/head/bowMain/bow2.R/bow2.R_end
-        weight: 1
-      - path: Rig/Master/ROOT/spine/chest/neck/head/bowMain/bow3.L
-        weight: 1
-      - path: Rig/Master/ROOT/spine/chest/neck/head/bowMain/bow3.L/bow4.L
-        weight: 1
-      - path: Rig/Master/ROOT/spine/chest/neck/head/bowMain/bow3.L/bow4.L/bow4.L_end
-        weight: 1
-      - path: Rig/Master/ROOT/spine/chest/neck/head/bowMain/bow3.R
-        weight: 1
-      - path: Rig/Master/ROOT/spine/chest/neck/head/bowMain/bow3.R/bow4.R
-        weight: 1
-      - path: Rig/Master/ROOT/spine/chest/neck/head/bowMain/bow3.R/bow4.R/bow4.R_end
-        weight: 1
-      - path: Rig/Master/ROOT/spine/chest/shoulder.L
-        weight: 1
-      - path: Rig/Master/ROOT/spine/chest/shoulder.L/Arm1.L
-        weight: 1
-      - path: Rig/Master/ROOT/spine/chest/shoulder.L/Arm1.L/Arm2.L
-        weight: 1
-      - path: Rig/Master/ROOT/spine/chest/shoulder.L/Arm1.L/Arm2.L/Arm3.L
-        weight: 1
-      - path: Rig/Master/ROOT/spine/chest/shoulder.L/Arm1.L/Arm2.L/Arm3.L/Arm3.L_end
-        weight: 1
-      - path: Rig/Master/ROOT/spine/chest/shoulder.R
-        weight: 1
-      - path: Rig/Master/ROOT/spine/chest/shoulder.R/Arm1.R
-        weight: 1
-      - path: Rig/Master/ROOT/spine/chest/shoulder.R/Arm1.R/Arm2.R
-        weight: 1
-      - path: Rig/Master/ROOT/spine/chest/shoulder.R/Arm1.R/Arm2.R/Arm3.R
-        weight: 1
-      - path: Rig/Master/ROOT/spine/chest/shoulder.R/Arm1.R/Arm2.R/Arm3.R/Arm3.R_end
-        weight: 1
-      - path: Rig/Master/ROOT/tail01
-        weight: 1
-      - path: Rig/Master/ROOT/tail01/tail02
-        weight: 1
-      - path: Rig/Master/ROOT/tail01/tail02/tail03
-        weight: 1
-      - path: Rig/Master/ROOT/tail01/tail02/tail03/tail04
-        weight: 1
-      - path: Rig/Master/ROOT/tail01/tail02/tail03/tail04/tail05
-        weight: 1
-      - path: Rig/Master/ROOT/tail01/tail02/tail03/tail04/tail05/tail06
-        weight: 1
-      - path: Rig/Master/ROOT/tail01/tail02/tail03/tail04/tail05/tail06/tail07
-        weight: 1
-      - path: Rig/Master/ROOT/tail01/tail02/tail03/tail04/tail05/tail06/tail07/tail07_end
-        weight: 1
-      - path: Rig/Master/ROOT/thigh.L
-        weight: 1
-      - path: Rig/Master/ROOT/thigh.L/shin.L
-        weight: 1
-      - path: Rig/Master/ROOT/thigh.L/shin.L/shin.L_end
-        weight: 1
-      - path: Rig/Master/ROOT/thigh.R
-        weight: 1
-      - path: Rig/Master/ROOT/thigh.R/shin.R
-        weight: 1
-      - path: Rig/Master/ROOT/thigh.R/shin.R/shin.R_end
-        weight: 1
-      - path: Sprinkle
-        weight: 1
+      transformMask: []
       maskType: 3
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
@@ -516,10 +236,10 @@ ModelImporter:
     globalScale: 1
     meshCompression: 0
     addColliders: 0
-    importVisibility: 0
+    importVisibility: 1
     importBlendShapes: 1
-    importCameras: 0
-    importLights: 0
+    importCameras: 1
+    importLights: 1
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
@@ -535,7 +255,7 @@ ModelImporter:
     normalSmoothAngle: 60
     normalImportMode: 0
     tangentImportMode: 3
-    normalCalculationMode: 0
+    normalCalculationMode: 4
   importAnimation: 1
   copyAvatar: 0
   humanDescription:
