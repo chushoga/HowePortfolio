@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerManager : MonoBehaviour {
+public class CharacterMovement : MonoBehaviour {
 
 	private Rigidbody rb;
 	private float moveSpeed = 0.70f;

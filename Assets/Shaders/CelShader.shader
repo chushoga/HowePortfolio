@@ -7,7 +7,7 @@ Shader "Custom/CelShader"
     	_Color ("Color Tint", Color) = (0,0,0,0)
         _MainTex ("Texture", 2D) = "white" {}
         _Treshold ("Cel Threshold", Range(1., 20.)) = 5.
-        _Ambient ("Ambient Intensity", Range(0., 0.5)) = 0.1
+        _Ambient ("Ambient Intensity", Range(0., 1.0)) = 0.1
         _Border("Border Size", Range(0.0,0.1)) = 0.01
 		_BorderColor("Border Color", Color) = (0,0,0,1)
 		[Toggle(SPECULAR_ENABLE)] _SpecularEnable("Enable Specular", Int) = 0
