@@ -14,16 +14,16 @@ public class WanderingAI : MonoBehaviour {
 
 
 	// Use this for initialization
-	void OnEnable () {
-		agent = GetComponent<UnityEngine.AI.NavMeshAgent> ();
+	void OnEnable() {
+		agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
 		timer = wanderTimer;
 	}
 
 	// Update is called once per frame
-	void Update () {
+	void Update() {		
 		timer += Time.deltaTime;
 
-		if (timer >= wanderTimer) {
+		if(timer >= wanderTimer) {
 			Vector3 newPos = RandomNavSphere(transform.position, wanderRadius, -1);
 			agent.speed = wanderSpeed;
 
@@ -42,7 +42,7 @@ public class WanderingAI : MonoBehaviour {
 
 		UnityEngine.AI.NavMeshHit navHit;
 
-		UnityEngine.AI.NavMesh.SamplePosition (randDirection, out navHit, dist, layermask);
+		UnityEngine.AI.NavMesh.SamplePosition(randDirection, out navHit, dist, layermask);
 
 		return navHit.position;
 	}

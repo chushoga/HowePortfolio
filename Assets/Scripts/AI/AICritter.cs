@@ -16,7 +16,7 @@ public class AICritter : MonoBehaviour {
 
 	// collision bounds(make larger than the character)
 	// this is a required component
-	SphereCollider collisionBarrier; 
+	SphereCollider collisionBarrier;
 
 	// required component.
 	Rigidbody rb;
@@ -36,7 +36,7 @@ public class AICritter : MonoBehaviour {
 	Animator ani;
 
 	// Use this for initialization
-	void Start () {
+	void Start() {
 
 		ani = GetComponent<Animator>();
 
@@ -58,22 +58,22 @@ public class AICritter : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void Update() {
 
 		// TODO RESTART HERE >>>>
 		// check animation stat here. if moving then do the moving animation. else do something else
-		if(rb.velocity == Vector3.zero){
+		if(rb.velocity == Vector3.zero) {
 			
 		}
 		// TODO RESTART HERE >>>>>
-		if (isMoving == true || isRotating == true){
+		if(isMoving == true || isRotating == true) {
 			ani.SetBool("isMoving", true);
 		} else {
 			ani.SetBool("isMoving", false);
 		}
 
 		// do a random check if should choose new direction or stand still for a random abount of time before moving.
-		if (isMoving == true && isRotating == false) {
+		if(isMoving == true && isRotating == false) {
 			
 			// update movement
 			transform.position = Vector3.MoveTowards(transform.position, targetPos, Time.deltaTime * wanderSpeed);
@@ -83,7 +83,7 @@ public class AICritter : MonoBehaviour {
 		}
 
 
-		if (Mathf.Round(transform.position.x) == Mathf.Round(targetPos.x) && Mathf.Round(transform.position.z) == Mathf.Round(targetPos.z)){
+		if(Mathf.Round(transform.position.x) == Mathf.Round(targetPos.x) && Mathf.Round(transform.position.z) == Mathf.Round(targetPos.z)) {
 			//Debug.Log("reached pos");
 			targetPos = RandomDirection();
 
@@ -93,21 +93,19 @@ public class AICritter : MonoBehaviour {
 		// TODO: have the gameobject move forward towards they way they are facing.
 		if(Input.GetKey(KeyCode.W)) {
 			transform.position += transform.forward * Time.deltaTime * wanderSpeed;
-		}
-		else if(Input.GetKey(KeyCode.S)) {
+		} else if(Input.GetKey(KeyCode.S)) {
 			rb.position -= transform.forward * Time.deltaTime * wanderSpeed;
 		}
 
 		if(Input.GetKey(KeyCode.D)) {
 			transform.Rotate(0, Time.deltaTime * turnSpeed, 0);
-		}
-		else if(Input.GetKey(KeyCode.A)) {
+		} else if(Input.GetKey(KeyCode.A)) {
 			transform.Rotate(0, Time.deltaTime * -turnSpeed, 0);
 		}
 	}
 
 	// pick a random direction and go
-	Vector3 RandomDirection(){
+	Vector3 RandomDirection() {
 		
 		Vector3 position = new Vector3(Random.Range(-wanderRange, wanderRange), 0, Random.Range(-wanderRange, wanderRange));
 
@@ -118,9 +116,8 @@ public class AICritter : MonoBehaviour {
 		Collider[] hitColliders = Physics.OverlapSphere(position, 1f);
 
 		int i = 0;
-		while (i < hitColliders.Length)
-		{
-			if(hitColliders[i].tag != "Ground" ){
+		while(i < hitColliders.Length) {
+			if(hitColliders[i].tag != "Ground") {
 				// recheck position and put a new position.
 				position = new Vector3(Random.Range(-wanderRange, wanderRange), 0, Random.Range(-wanderRange, wanderRange));
 			} 
@@ -131,7 +128,7 @@ public class AICritter : MonoBehaviour {
 
 	}
 
-	void LookTowards (){
+	void LookTowards() {
 
 		isRotating = true;
 		
@@ -143,7 +140,7 @@ public class AICritter : MonoBehaviour {
 		Quaternion rotation = Quaternion.LookRotation(targetDir);
 
 		// check the target direction and see if it equels the current rotation.
-		if (transform.rotation == rotation) {
+		if(transform.rotation == rotation) {
 			isRotating = false;
 		}
 
@@ -153,14 +150,13 @@ public class AICritter : MonoBehaviour {
 
 	}
 
-	// If Object collides with the proximity trigger then 
+	// If Object collides with the proximity trigger then
 	// choose a new direction and face it.
-	void OnTriggerEnter(Collider collision)
-	{
+	void OnTriggerEnter(Collider collision) {
 		
-		if(collision.gameObject.tag != "Ground"){
+		if(collision.gameObject.tag != "Ground") {
 
-			if(isMoving == true){
+			if(isMoving == true) {
 
 				StartCoroutine(CollisionCooldown());
 					
@@ -179,12 +175,11 @@ public class AICritter : MonoBehaviour {
 
 	// If object touches directly with body collier then
 	// choose a new direction and face it.
-	void OnCollisionEnter(Collision collision)
-	{
+	void OnCollisionEnter(Collision collision) {
 
 
 
-		if(collision.gameObject.tag != "Ground"){
+		if(collision.gameObject.tag != "Ground") {
 			//Debug.Log("reached pos");
 
 			targetPos = RandomDirection();
@@ -197,10 +192,10 @@ public class AICritter : MonoBehaviour {
 	// choose if moving or stopped.
 	// 0 = stopped
 	// 1 = moving
-	void ChooseMoveType(){
-		float rnd = Random.Range(0.0f,100.0f);
+	void ChooseMoveType() {
+		float rnd = Random.Range(0.0f, 100.0f);
 
-		if(rnd >= 50){
+		if(rnd >= 50) {
 			isMoving = true;
 		} else {
 			isMoving = false;
@@ -210,11 +205,11 @@ public class AICritter : MonoBehaviour {
 		//Debug.Log("move type:" + rnd);
 	}
 
-	IEnumerator MovementPause(){
+	IEnumerator MovementPause() {
 
 		isMoving = false;
 
-		float time = Random.Range(10.0f,20.0f);
+		float time = Random.Range(10.0f, 20.0f);
 
 		yield return new WaitForSeconds(time);
 
@@ -225,7 +220,7 @@ public class AICritter : MonoBehaviour {
 		isMoving = true;
 	}
 
-	IEnumerator CollisionCooldown(){
+	IEnumerator CollisionCooldown() {
 		
 
 		collisionBarrier.enabled = false;
