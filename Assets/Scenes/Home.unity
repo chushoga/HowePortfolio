@@ -108,6 +108,35 @@ NavMeshSettings:
     tileSize: 256
     accuratePlacement: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &106223365
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 106223366}
+  m_Layer: 0
+  m_Name: CenterPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &106223366
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 106223365}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 649979167}
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &228174935
 GameObject:
   m_ObjectHideFlags: 0
@@ -258,13 +287,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 649979162}
-  m_LocalRotation: {x: 0.13588855, y: -0, z: -0, w: 0.99072415}
-  m_LocalPosition: {x: 0, y: 2.1299999, z: -2.9}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 6
-  m_LocalEulerAnglesHint: {x: 15.62, y: 0, z: 0}
+  m_Father: {fileID: 106223366}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &649979168
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -273,12 +302,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 649979162}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cc15942981c0ae346a9c6ca9245177c0, type: 3}
+  m_Script: {fileID: 11500000, guid: fe8bbd643d4686b4a8e58cb9699a15ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 649979167}
-  angularSpeed: 0
-  initalOffset: {x: 0, y: 0, z: 0}
+  playerCam: {fileID: 649979167}
+  character: {fileID: 915769517}
+  centerPoint: {fileID: 106223366}
+  mouseSensativity: 10
+  moveSpeed: 2
+  zoomSpeed: 2
+  zoomMin: -2
+  zoomMax: -10
 --- !u!1 &669491794
 GameObject:
   m_ObjectHideFlags: 0
@@ -438,6 +472,10 @@ Transform:
 --- !u!1 &915769515 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 100046, guid: e716f8f31864c3a4fb7c79e4b36ad616, type: 3}
+  m_PrefabInternal: {fileID: 1962962196}
+--- !u!4 &915769517 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 400046, guid: e716f8f31864c3a4fb7c79e4b36ad616, type: 3}
   m_PrefabInternal: {fileID: 1962962196}
 --- !u!114 &915769518
 MonoBehaviour:
