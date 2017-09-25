@@ -7,7 +7,7 @@ public class CharacterMovement : MonoBehaviour {
 	private Rigidbody rb;
 	private float moveSpeed = 0.70f;
 	private float rotSpeed = 50.0f;
-	private float jumpHeight;
+	private float jumpHeight = 2.5f;
 	private Animator ani;
 	private bool isGrounded;
 
@@ -48,7 +48,7 @@ public class CharacterMovement : MonoBehaviour {
 		}
 		// JUMP ***********************
 		if(Input.GetKeyDown(KeyCode.Space) && isGrounded == true) {
-			rb.AddForce(0f, 5.0f, 0f, ForceMode.Impulse);
+			rb.AddForce(0f, jumpHeight, 0f, ForceMode.Impulse);
 			ani.SetBool("isWalking", true);
 			isGrounded = false;
 		}
