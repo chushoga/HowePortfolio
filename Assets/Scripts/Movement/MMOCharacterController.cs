@@ -4,34 +4,36 @@ using UnityEngine;
 
 public class MMOCharacterController : MonoBehaviour {
 
-	public Transform playerCam, character, centerPoint;
+	//public Transform character, centerPoint;
 
-	private float mouseX, mouseY;
-	public float mouseSensativity = 10.0f;
+	public GameObject camera;
 
-	private float moveFB, moveLR;
-	public float moveSpeed = 2f;
+	//private float mouseX, mouseY;
+	//public float mouseSensativity = 10.0f;
 
-	private float zoom;
-	public float zoomSpeed = 2f;
+	//private float moveFB, moveLR;
+	//public float moveSpeed = 2f;
 
-	public float zoomMin = -2f;
-	public float zoomMax = -10f;
+	public float zoom;
+	//public float zoomSpeed = 2f;
+
+	public float zoomMin = -2.0f;
+	public float zoomMax = -10.0f;
 
 	// Use this for initialization
 	
 	void Start () {
 		
-		zoom = -3f;
+		zoom = -3.0f;
 
 	}
 	
 	// Update is called once per frame
 	void Update () {
 
-		zoom += Input.GetAxis("Mouse ScrollWheel") * 50f;
+		zoom += Input.GetAxis("Mouse ScrollWheel") * 50.0f;
 
-
+		//Print("ZOOM: " + zoom);
 		if(zoom > zoomMin) {
 			zoom = zoomMin;
 		}
@@ -40,7 +42,7 @@ public class MMOCharacterController : MonoBehaviour {
 			zoom = zoomMax;
 		}
 
-		playerCam.transform.position = new Vector3(0, 0, zoom);
+		//camera.transform.position.z = zoom;
 
 	}
 }
