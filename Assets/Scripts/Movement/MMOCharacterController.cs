@@ -15,34 +15,48 @@ public class MMOCharacterController : MonoBehaviour {
 	//public float moveSpeed = 2f;
 
 	public float zoom;
-	//public float zoomSpeed = 2f;
+	public float zoomSpeed = 100f;
 
 	public float zoomMin = -2.0f;
 	public float zoomMax = -10.0f;
 
-	// Use this for initialization
-	
+	Vector3 pos;
+
+
 	void Start () {
 		
-		zoom = -3.0f;
+		zoom = -10.0f;
+		camera.transform.position = new Vector3(transform.position.x,transform.position.y,zoom);
+
+		pos = camera.transform.position;
 
 	}
 	
 	// Update is called once per frame
 	void Update () {
-
-		zoom += Input.GetAxis("Mouse ScrollWheel") * 50.0f;
-
-		//Print("ZOOM: " + zoom);
-		if(zoom > zoomMin) {
-			zoom = zoomMin;
+		
+		
+		if(Input.GetAxis("Mouse ScrollWheel") != 0){
+			
 		}
 
-		if(zoom < zoomMin) {
-			zoom = zoomMax;
+		if(Input.GetAxis("Mouse ScrollWheel") > 0){
+			pos.z += 1f;
+			camera.transform.position = pos;
 		}
 
-		//camera.transform.position.z = zoom;
+		if(Input.GetAxis("Mouse ScrollWheel") < 0){
+			pos.z -= 1f;
+			camera.transform.position = pos;
+		}
+
+		if(pos.z > zoomMin) {
+			camera.transform.position = zoomMin;
+		}
+
+		if(pos.z < zoomMax) {
+			camera.transform.position = zoomMax;
+		}
 
 	}
 }

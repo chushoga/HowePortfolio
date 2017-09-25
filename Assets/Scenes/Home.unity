@@ -151,6 +151,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   camera: {fileID: 649979162}
   zoom: 0
+  zoomSpeed: 100
   zoomMin: -2
   zoomMax: -10
 --- !u!1 &228174935
