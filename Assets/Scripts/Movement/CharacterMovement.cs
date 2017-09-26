@@ -5,7 +5,7 @@ using UnityEngine;
 public class CharacterMovement : MonoBehaviour {
 
 	private Rigidbody rb;
-	private float moveSpeed = 0.70f;
+	[SerializeField] private float moveSpeed = 0.70f;
 	private float rotSpeed = 50.0f;
 	private float jumpHeight = 2.5f;
 	private Animator ani;
