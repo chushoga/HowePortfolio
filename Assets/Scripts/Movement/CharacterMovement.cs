@@ -71,10 +71,29 @@ public class CharacterMovement : MonoBehaviour {
 			Ray ray = Camera.main.ScreenPointToRay (Input.mousePosition);
 			if(Physics.Raycast(ray, out hit)){
 				clickedPos = hit.point;
+				Debug.Log(clickedPos);
 				moveToCursor.transform.position = clickedPos;
+
+				// start the movement coroutine
+				IEnumerator a = MoveOverSpeed(gameObject, clickedPos, 5.0f);
+				// stop previous movement coroutine before starting this one.
+				StopAllCoroutines();
+				StartCoroutine(a);
 			}
 
 		}
+	}
+
+	// MOVE TO COROUTINE
+	// Move to the clicked position
+	public IEnumerator MoveOverSpeed(GameObject objectToMove, Vector3 end, float speed){
+		
+		// speed should be 1unit/s
+		while(objectToMove.transform.position != end){
+			objectToMove.transform.position = Vector3.MoveTowards(objectToMove.transform.position, end, speed * Time.deltaTime);
+			yield return new WaitForEndOfFrame();
+		}
+
 	}
 
 	// Change isGrounded to true after collision.
