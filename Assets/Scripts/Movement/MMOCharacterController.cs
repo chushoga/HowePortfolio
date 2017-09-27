@@ -9,7 +9,6 @@ public class MMOCharacterController : MonoBehaviour {
 
 	float zoomMin = 1.0f;
 	float zoomMax = 4.5f;
-	float zoomOffset = 4.5f;
 
 	Vector3 cameraRotation;
 
