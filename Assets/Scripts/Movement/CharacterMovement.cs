@@ -11,6 +11,9 @@ public class CharacterMovement : MonoBehaviour {
 	private Animator ani;
 	private bool isGrounded;
 
+	// MOUSE MOVEMENT
+	[SerializeField] GameObject moveToCursor;
+
 	// Use this for initialization
 	void Start() {
 		rb = GetComponent<Rigidbody>();
@@ -55,6 +58,22 @@ public class CharacterMovement : MonoBehaviour {
 		// IDLE ***********************
 		if(!Input.anyKey) {
 			ani.SetBool("isWalking", false);
+		}
+
+		// ---------------------------------------------------------
+		// MOUSE MOVEMENT
+		// ---------------------------------------------------------
+		if(Input.GetMouseButtonDown(0)){
+			Debug.Log ("down");
+
+			Vector3 clickedPos;
+			RaycastHit hit;
+			Ray ray = Camera.main.ScreenPointToRay (Input.mousePosition);
+			if(Physics.Raycast(ray, out hit)){
+				clickedPos = hit.point;
+				moveToCursor.transform.position = clickedPos;
+			}
+
 		}
 	}
 
