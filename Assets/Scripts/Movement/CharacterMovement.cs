@@ -66,10 +66,13 @@ public class CharacterMovement : MonoBehaviour {
 		if(Input.GetMouseButtonDown(0)){
 			Debug.Log ("down");
 
+			// layer mask
+			int lMask = LayerMask.GetMask("Ground");
+			Debug.Log (lMask);
 			Vector3 clickedPos;
 			RaycastHit hit;
 			Ray ray = Camera.main.ScreenPointToRay (Input.mousePosition);
-			if(Physics.Raycast(ray, out hit)){
+			if(Physics.Raycast(ray, out hit, 1000f, lMask)){
 				clickedPos = hit.point;
 				Debug.Log(clickedPos);
 				moveToCursor.transform.position = clickedPos;
