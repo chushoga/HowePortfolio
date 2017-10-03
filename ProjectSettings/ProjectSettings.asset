@@ -142,7 +142,7 @@ PlayerSettings:
   targetPixelDensity: 0
   resolutionScalingMode: 0
   applicationIdentifier:
-    Android: com.Company.ProductName
+    Android: com.CrystalSprings.HowePortfolio
     Standalone: unity.DefaultCompany.HowePortfolio
     Tizen: com.Company.ProductName
     iOS: com.Company.ProductName
