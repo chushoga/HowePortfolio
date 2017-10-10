@@ -16,13 +16,19 @@ public class ModelController : MonoBehaviour
 
 	void Start()
 	{
+		
 
 		Animator anim = gm.GetComponent<Animator>();
 
 		Debug.Log(parentPanel.childCount);
+		Debug.Log(anim.runtimeAnimatorController.animationClips.Length);
 		anim.SetBool("isWalking", true);
-		for(int i = 0; i < 5; i++) {
-			
+
+		int i = 0;
+		foreach(AnimationClip ac in anim.runtimeAnimatorController.animationClips){
+			//anim.runtimeAnimatorController.animationClips
+			Debug.Log(anim.runtimeAnimatorController.animationClips[i].name);
+			i++;
 		}
 	}
 
