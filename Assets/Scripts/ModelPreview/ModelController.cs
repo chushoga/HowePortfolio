@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ModelController : MonoBehaviour
 {
@@ -13,23 +14,43 @@ public class ModelController : MonoBehaviour
 	// UI
 	public RectTransform parentPanel;
 	public GameObject actionButtonPrefab;
+	private GameObject actionPanel;
 
 	void Start()
 	{
-		
+		// Find the action panel
+		actionPanel = GameObject.Find("ActionPanel");
 
-		Animator anim = gm.GetComponent<Animator>();
+		// Check if the action actually exists
+		if(actionPanel != null) {
 
-		Debug.Log(parentPanel.childCount);
-		Debug.Log(anim.runtimeAnimatorController.animationClips.Length);
-		anim.SetBool("isWalking", true);
+			Animator anim = gm.GetComponent<Animator>();
 
-		int i = 0;
-		foreach(AnimationClip ac in anim.runtimeAnimatorController.animationClips){
-			//anim.runtimeAnimatorController.animationClips
-			Debug.Log(anim.runtimeAnimatorController.animationClips[i].name);
-			i++;
+			Debug.Log(parentPanel.childCount);
+			Debug.Log(anim.runtimeAnimatorController.animationClips.Length);
+			anim.SetBool("isWalking", false);
+
+			int i = 0;
+			foreach(AnimationClip ac in anim.runtimeAnimatorController.animationClips){
+				//anim.runtimeAnimatorController.animationClips
+				Debug.Log(anim.runtimeAnimatorController.animationClips[i].name);
+
+				GameObject a = (GameObject)Instantiate(actionButtonPrefab);
+				a.transform.SetParent(actionPanel.transform, false);
+
+				Text txt = a.GetComponentInChildren<Text>();
+
+				txt.text = anim.runtimeAnimatorController.animationClips[i].name;
+
+				i++;
+			}
+
+
+		} else {
+			Debug.Log("some error");
 		}
+
+
 	}
 
 	// Update is called once per frame
