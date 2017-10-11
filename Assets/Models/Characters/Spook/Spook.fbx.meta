@@ -88,17 +88,17 @@ ModelImporter:
     400078: UpperArm_L
     400080: UpperArm_R
     4300000: BaseMesh
-    7400000: Armature|Attack
-    7400002: Armature|Damage
-    7400004: Armature|Die
-    7400006: Armature|Idle1
-    7400008: Armature|Idle2
-    7400010: Armature|Jump_Idle
-    7400012: Armature|Jump_Land
-    7400014: Armature|Jump_Land_Run
-    7400016: Armature|Jump_Start
-    7400018: Armature|Run
-    7400020: Armature|Walk
+    7400000: Attack
+    7400002: Damage
+    7400004: Die
+    7400006: Idle1
+    7400008: Idle2
+    7400010: Jump_Idle
+    7400012: Jump_Land
+    7400014: Jump_Land_Run
+    7400016: Jump_Start
+    7400018: Run
+    7400020: Walk
     7400022: BaseMesh|Idle1
     9500000: //RootNode
     13700000: BaseMesh
@@ -127,7 +127,7 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Armature|Attack
+      name: Attack
       takeName: Armature|Attack
       firstFrame: 0
       lastFrame: 10
@@ -155,7 +155,7 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Armature|Damage
+      name: Damage
       takeName: Armature|Damage
       firstFrame: 0
       lastFrame: 8
@@ -183,7 +183,7 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Armature|Die
+      name: Die
       takeName: Armature|Die
       firstFrame: 0
       lastFrame: 48
@@ -211,7 +211,7 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Armature|Idle1
+      name: Idle1
       takeName: Armature|Idle1
       firstFrame: 0
       lastFrame: 24
@@ -239,7 +239,7 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Armature|Idle2
+      name: Idle2
       takeName: Armature|Idle2
       firstFrame: 0
       lastFrame: 120
@@ -267,7 +267,7 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Armature|Jump_Idle
+      name: Jump_Idle
       takeName: Armature|Jump_Idle
       firstFrame: 0
       lastFrame: 12
@@ -295,7 +295,7 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Armature|Jump_Land
+      name: Jump_Land
       takeName: Armature|Jump_Land
       firstFrame: 0
       lastFrame: 12
@@ -323,7 +323,7 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Armature|Jump_Land_Run
+      name: Jump_Land_Run
       takeName: Armature|Jump_Land_Run
       firstFrame: 0
       lastFrame: 8
@@ -351,7 +351,7 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Armature|Jump_Start
+      name: Jump_Start
       takeName: Armature|Jump_Start
       firstFrame: 0
       lastFrame: 12
@@ -379,7 +379,7 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Armature|Run
+      name: Run
       takeName: Armature|Run
       firstFrame: 0
       lastFrame: 24
@@ -407,7 +407,7 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Armature|Walk
+      name: Walk
       takeName: Armature|Walk
       firstFrame: 0
       lastFrame: 24

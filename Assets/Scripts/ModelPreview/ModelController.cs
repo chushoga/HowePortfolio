@@ -6,10 +6,11 @@ using UnityEngine.UI;
 public class ModelController : MonoBehaviour
 {
 
-	public float rotSpeed = 2.0f; // rotation speed for the character
+	public float rotSpeed = 0.0f; // rotation speed for the character
 
 	// ANIMATIONS
-	public GameObject gm;
+	public List<GameObject> gm;
+	private Animator anim;
 
 	// UI
 	public RectTransform parentPanel;
@@ -18,22 +19,29 @@ public class ModelController : MonoBehaviour
 
 	void Start()
 	{
+		
+		GameObject model = Instantiate(gm[1], new Vector3(0, 0, 0), Quaternion.identity) as GameObject;
+		model.transform.SetParent(gameObject.transform, false);
+
 		// Find the action panel
 		actionPanel = GameObject.Find("ActionPanel");
 
 		// Check if the action actually exists
 		if(actionPanel != null) {
 
-			Animator anim = gm.GetComponent<Animator>();
+			anim = gm[1].GetComponent<Animator>();
 
 			Debug.Log(parentPanel.childCount);
 			Debug.Log(anim.runtimeAnimatorController.animationClips.Length);
-			anim.SetBool("isWalking", false);
+			//anim.SetBool("isWalking", false);
 
 			int i = 0;
 			foreach(AnimationClip ac in anim.runtimeAnimatorController.animationClips){
+
+				string animationName = anim.runtimeAnimatorController.animationClips[i].name;
+
 				//anim.runtimeAnimatorController.animationClips
-				Debug.Log(anim.runtimeAnimatorController.animationClips[i].name);
+				Debug.Log(anim.runtimeAnimatorController.animationClips[i].name.GetType());
 
 				GameObject a = (GameObject)Instantiate(actionButtonPrefab);
 				a.transform.SetParent(actionPanel.transform, false);
@@ -41,6 +49,8 @@ public class ModelController : MonoBehaviour
 				Text txt = a.GetComponentInChildren<Text>();
 
 				txt.text = anim.runtimeAnimatorController.animationClips[i].name;
+
+				a.GetComponent<Button>().onClick.AddListener(() => PlayAnimationButton(animationName));
 
 				i++;
 			}
@@ -59,4 +69,21 @@ public class ModelController : MonoBehaviour
 		transform.Rotate(Vector3.up * Time.deltaTime * rotSpeed);
 
 	}
+
+
+	// Play the animation
+	void PlayAnimationButton(string animName){
+		anim.Play(animName);
+	}
+
+	// Start he model rotation
+	public void StartRotating(){
+		rotSpeed = 20.0f;
+	}
+
+	// Stop the model rotation
+	public void StopRotating(){
+		rotSpeed = 0;
+	}
+
 }
