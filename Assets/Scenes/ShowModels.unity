@@ -728,7 +728,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.77770317, y: 0.89227784}
   m_AnchorMax: {x: 0.8773125, y: 1}
-  m_AnchoredPosition: {x: -1.079956, y: 7.295044}
+  m_AnchoredPosition: {x: -1.0800781, y: 7.295044}
   m_SizeDelta: {x: -0.8000488, y: -60.210022}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &468552058
@@ -1253,7 +1253,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rotSpeed: 0
   gm:
-  - {fileID: 0}
+  - {fileID: 1036400469179906, guid: cd3fda21615b1bd468554807464bbfad, type: 2}
   - {fileID: 1353231457025316, guid: 6f071ce7988e1b9439fb42793d94aa82, type: 2}
   parentPanel: {fileID: 616478959}
   actionButtonPrefab: {fileID: 1238589898226698, guid: a1cf5c5d2bdfc1746a5d16f45ed4e191,

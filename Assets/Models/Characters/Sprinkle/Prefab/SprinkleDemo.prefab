@@ -67,7 +67,7 @@ GameObject:
   - component: {fileID: 4153094636257538}
   - component: {fileID: 95571485061656420}
   m_Layer: 0
-  m_Name: Sprinkle
+  m_Name: SprinkleDemo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

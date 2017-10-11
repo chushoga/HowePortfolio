@@ -246,7 +246,7 @@ GameObject:
   - component: {fileID: 4570554567814266}
   - component: {fileID: 95344131431924190}
   m_Layer: 0
-  m_Name: Spook
+  m_Name: SpookDemo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
