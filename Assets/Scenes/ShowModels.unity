@@ -1255,6 +1255,7 @@ MonoBehaviour:
   gm:
   - {fileID: 1036400469179906, guid: cd3fda21615b1bd468554807464bbfad, type: 2}
   - {fileID: 1353231457025316, guid: 6f071ce7988e1b9439fb42793d94aa82, type: 2}
+  anim: {fileID: 0}
   parentPanel: {fileID: 616478959}
   actionButtonPrefab: {fileID: 1238589898226698, guid: a1cf5c5d2bdfc1746a5d16f45ed4e191,
     type: 2}
@@ -2515,7 +2516,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 2043426808}
   m_Direction: 2
   m_Value: 1
-  m_Size: 0.25618812
+  m_Size: 0.25641602
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:

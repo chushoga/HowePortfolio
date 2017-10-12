@@ -10,7 +10,7 @@ public class ModelController : MonoBehaviour
 
 	// ANIMATIONS
 	public List<GameObject> gm;
-	private Animator anim;
+	public Animator anim;
 
 	// UI
 	public RectTransform parentPanel;
@@ -29,7 +29,7 @@ public class ModelController : MonoBehaviour
 		// Check if the action actually exists
 		if(actionPanel != null) {
 
-			anim = gm[1].GetComponent<Animator>();
+			anim = model.GetComponent<Animator>();
 
 			Debug.Log(parentPanel.childCount);
 			Debug.Log(anim.runtimeAnimatorController.animationClips.Length);
@@ -40,8 +40,7 @@ public class ModelController : MonoBehaviour
 
 				string animationName = anim.runtimeAnimatorController.animationClips[i].name;
 
-				//anim.runtimeAnimatorController.animationClips
-				Debug.Log(anim.runtimeAnimatorController.animationClips[i].name.GetType());
+
 
 				GameObject a = (GameObject)Instantiate(actionButtonPrefab);
 				a.transform.SetParent(actionPanel.transform, false);
@@ -73,6 +72,8 @@ public class ModelController : MonoBehaviour
 
 	// Play the animation
 	void PlayAnimationButton(string animName){
+		Debug.Log(anim.runtimeAnimatorController.name);
+
 		anim.Play(animName);
 	}
 
