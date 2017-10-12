@@ -1,44 +1,44 @@
 fileFormatVersion: 2
-guid: 412af95e707317249be3bdcaf35da083
-timeCreated: 1505742530
+guid: 138ac3dc7c5479c4aa757f2896458078
+timeCreated: 1507817508
 licenseType: Free
 ModelImporter:
   serializedVersion: 21
   fileIDToRecycleName:
     100000: Armature
     100002: BaseMesh
-    100004: //RootNode
-    100006: Driver_BodyScaleOnly
-    100008: Driver_BodyScaleOnly_end
-    100010: Hand_L
-    100012: Hand_L_end
-    100014: Hand_R
-    100016: Hand_R_end
-    100018: Hat_0
-    100020: Hat_1
-    100022: Hat_2
-    100024: Hat_3
-    100026: Hat_4
-    100028: Hat_5
-    100030: Hat_6
-    100032: Hat_7
-    100034: Hat_8
-    100036: Head
-    100038: Hip_L
-    100040: Hip_L_end
-    100042: Hip_R
-    100044: Hip_R_end
-    100046: Master
-    100048: MidArm_L
-    100050: MidArm_R
-    100052: Neck
-    100054: Shoulder_L
-    100056: Shoulder_R
-    100058: Skull
-    100060: Skull_end
-    100062: Spine_0
-    100064: Spine_1
-    100066: Spine_2
+    100004: Driver_BodyScaleOnly
+    100006: Driver_BodyScaleOnly_end
+    100008: Hand_L
+    100010: Hand_L_end
+    100012: Hand_R
+    100014: Hand_R_end
+    100016: Hat_0
+    100018: Hat_1
+    100020: Hat_2
+    100022: Hat_3
+    100024: Hat_4
+    100026: Hat_5
+    100028: Hat_6
+    100030: Hat_7
+    100032: Hat_8
+    100034: Head
+    100036: Hip_L
+    100038: Hip_L_end
+    100040: Hip_R
+    100042: Hip_R_end
+    100044: Master
+    100046: MidArm_L
+    100048: MidArm_R
+    100050: Neck
+    100052: Shoulder_L
+    100054: Shoulder_R
+    100056: Skull
+    100058: Skull_end
+    100060: Spine_0
+    100062: Spine_1
+    100064: Spine_2
+    100066: //RootNode
     100068: TailBone_0
     100070: TailBone_1
     100072: TailBone_2
@@ -48,38 +48,38 @@ ModelImporter:
     100080: UpperArm_R
     400000: Armature
     400002: BaseMesh
-    400004: //RootNode
-    400006: Driver_BodyScaleOnly
-    400008: Driver_BodyScaleOnly_end
-    400010: Hand_L
-    400012: Hand_L_end
-    400014: Hand_R
-    400016: Hand_R_end
-    400018: Hat_0
-    400020: Hat_1
-    400022: Hat_2
-    400024: Hat_3
-    400026: Hat_4
-    400028: Hat_5
-    400030: Hat_6
-    400032: Hat_7
-    400034: Hat_8
-    400036: Head
-    400038: Hip_L
-    400040: Hip_L_end
-    400042: Hip_R
-    400044: Hip_R_end
-    400046: Master
-    400048: MidArm_L
-    400050: MidArm_R
-    400052: Neck
-    400054: Shoulder_L
-    400056: Shoulder_R
-    400058: Skull
-    400060: Skull_end
-    400062: Spine_0
-    400064: Spine_1
-    400066: Spine_2
+    400004: Driver_BodyScaleOnly
+    400006: Driver_BodyScaleOnly_end
+    400008: Hand_L
+    400010: Hand_L_end
+    400012: Hand_R
+    400014: Hand_R_end
+    400016: Hat_0
+    400018: Hat_1
+    400020: Hat_2
+    400022: Hat_3
+    400024: Hat_4
+    400026: Hat_5
+    400028: Hat_6
+    400030: Hat_7
+    400032: Hat_8
+    400034: Head
+    400036: Hip_L
+    400038: Hip_L_end
+    400040: Hip_R
+    400042: Hip_R_end
+    400044: Master
+    400046: MidArm_L
+    400048: MidArm_R
+    400050: Neck
+    400052: Shoulder_L
+    400054: Shoulder_R
+    400056: Skull
+    400058: Skull_end
+    400060: Spine_0
+    400062: Spine_1
+    400064: Spine_2
+    400066: //RootNode
     400068: TailBone_0
     400070: TailBone_1
     400072: TailBone_2
@@ -92,14 +92,14 @@ ModelImporter:
     7400002: Damage
     7400004: Die
     7400006: Idle1
-    7400008: Idle2
+    7400008: Armature|Idle2
     7400010: Jump_Idle
     7400012: Jump_Land
     7400014: Jump_Land_Run
     7400016: Jump_Start
     7400018: Run
     7400020: Walk
-    7400022: BaseMesh|Idle1
+    7400022: Die
     9500000: //RootNode
     13700000: BaseMesh
   materials:
@@ -239,7 +239,7 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Idle2
+      name: Armature|Idle2
       takeName: Armature|Idle2
       firstFrame: 0
       lastFrame: 120
