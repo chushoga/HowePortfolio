@@ -92,7 +92,7 @@ ModelImporter:
     7400002: Damage
     7400004: Die
     7400006: Idle1
-    7400008: Armature|Idle2
+    7400008: Idle2
     7400010: Jump_Idle
     7400012: Jump_Land
     7400014: Jump_Land_Run
@@ -239,7 +239,7 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Armature|Idle2
+      name: Idle2
       takeName: Armature|Idle2
       firstFrame: 0
       lastFrame: 120
