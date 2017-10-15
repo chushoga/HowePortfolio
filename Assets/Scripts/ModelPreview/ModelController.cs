@@ -10,7 +10,7 @@ public class ModelController : MonoBehaviour
 
 	// ANIMATIONS
 	public List<GameObject> gm;
-	public Animator anim;
+	private Animator anim;
 
 	// UI
 	public RectTransform parentPanel;
@@ -31,9 +31,8 @@ public class ModelController : MonoBehaviour
 
 			anim = model.GetComponent<Animator>();
 
-			Debug.Log(parentPanel.childCount);
-			Debug.Log(anim.runtimeAnimatorController.animationClips.Length);
-			//anim.SetBool("isWalking", false);
+			//Debug.Log(parentPanel.childCount);
+			//Debug.Log(anim.runtimeAnimatorController.animationClips.Length);
 
 			int i = 0;
 			foreach(AnimationClip ac in anim.runtimeAnimatorController.animationClips){
@@ -54,9 +53,8 @@ public class ModelController : MonoBehaviour
 				i++;
 			}
 
-
 		} else {
-			Debug.Log("some error");
+			Debug.Log("There is no actionPanel in the GUI for the actions.");
 		}
 
 
@@ -72,8 +70,6 @@ public class ModelController : MonoBehaviour
 
 	// Play the animation
 	void PlayAnimationButton(string animName){
-		Debug.Log(anim.runtimeAnimatorController.name);
-
 		anim.Play(animName);
 	}
 
